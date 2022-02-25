@@ -1,0 +1,53 @@
+import datetime
+
+x = datetime.datetime.now()
+data_entrada = x.strptime("00:00","%H:%M") 
+
+
+
+
+def menu_entrada():
+    try:
+        placa = input('Placa: ')
+        e = input('Horario de entrada: ')
+        data_entrada = x.strptime(e,"%H:%M")    
+        print ('Placa cadastrada com sucesso!')
+        input()
+    except:
+        print('nao consegui entender ! digite no formato certo')
+
+
+
+
+def menu_baixa():
+
+    try:
+        placa = input('Placa: ')
+        v =  x -  data_entrada#({s} - {e})    
+        r = 10 * v.seconds /3600    
+        print()
+        print ('total a pagar = R${}'.format(r))
+        input()
+    except:
+        print('nao consegui entender ! digite no formato certo')
+
+    
+
+
+print('BEM VINDO')
+print('ESTACIONAMENTO DA PRAIA ')
+
+comando = 9
+
+while(comando != '0'):
+
+
+    print('Lancamento = 1, Baixa = 2 , Sair =0')
+    comando = input('Escolha: ')
+
+    if(comando == '1'):
+        menu_entrada()
+    if(comando == '2'):
+        menu_baixa()
+
+print('FIm ! OBRIGADO POR USAR O SISTEMA')
